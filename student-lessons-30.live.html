@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://student-lessons-30.live/ -->
+<html lang="en" data-theme="amoled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>student-lessons-30.live </title>
+<meta name="description" content="Unblocked games with pre-play screen, ads, 10-col grid, favicon switcher, and info pages.">
+<link id="fav-ico" rel="icon" href="./student-lessons-30.live_files/favicon(3).ico" sizes="any">
+<link id="fav-apple" rel="apple-touch-icon" href="./student-lessons-30.live_files/favicon(3).ico">
+<meta name="theme-color" content="#090d13">
+<style>
+  :root{ --bg:#0a0f16; --panel:#0d141e; --tile:rgba(20,26,36,.78); --tile-hover:rgba(32,42,60,.86);
+         --muted:#9fb1c3; --text:#eef6ff; --accent:#2ea8ff; --accent2:#58c5ff; --border:rgba(46,168,255,.18);
+         --danger:#ff4d6d; --danger2:#ff7ea1; --danger3:#ff99b3; }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial}
+  a{color:inherit;text-decoration:none}
+
+  .wrap{max-width:1600px;margin:0 auto;padding:16px 14px 60px}
+
+  /* TOP BAR */
+  .topbar{display:flex;align-items:center;gap:14px;justify-content:space-between;margin-bottom:10px}
+  .brandline{display:flex;align-items:center;gap:14px;min-width:0}
+  .brand a{display:inline-flex;align-items:center;font-weight:900;letter-spacing:.2px;font-size:19px;white-space:nowrap}
+  .brand a:hover{filter:saturate(1.1)}
+  .nav{display:flex;gap:8px;flex-wrap:wrap}
+  .nav a{display:inline-flex;align-items:center;padding:8px 10px;border-radius:10px;font-size:13px;color:#d9e6f2;
+         border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+  .nav a:hover{background:rgba(255,255,255,.07)}
+
+  .actions{display:flex;align-items:center;gap:10px;position:relative}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;cursor:pointer;font-size:13px;
+    background:linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent) 85%, #000 15%));
+    color:#06121a; border:1px solid color-mix(in oklab, var(--accent) 70%, #fff 30%);
+    box-shadow:0 0 0 rgba(46,168,255,0); transition:box-shadow .18s ease, transform .12s ease, background .18s ease, border-color .18s ease, filter .18s ease}
+  .btn:hover{ background:linear-gradient(180deg, var(--accent2), color-mix(in oklab, var(--accent2) 80%, #000 20%)); border-color:color-mix(in oklab, var(--accent2) 70%, #fff 30%); box-shadow:0 6px 24px rgba(46,168,255,.28), 0 2px 6px rgba(46,168,255,.36); transform:translateY(-1px) }
+  .btn.red{
+    background: radial-gradient(120% 180% at 10% -10%, var(--danger3) 0%, var(--danger2) 18%, var(--danger) 48%, #a6132e 100%);
+    color:#1b0b14; border:1px solid color-mix(in oklab, var(--danger) 70%, #fff 30%);
+    animation: pulseGlow 2.2s ease-in-out infinite;
+    font-weight:900; font-size:15px; padding:12px 18px; letter-spacing:.2px;
+  }
+  .btn.red:hover{ box-shadow:0 10px 26px rgba(255,77,109,.35), 0 3px 8px rgba(255,77,109,.45); transform: translateY(-1px) scale(1.01); filter: saturate(1.05) }
+  @keyframes pulseGlow{ 0%,100%{box-shadow:0 0 0 rgba(255,77,109,0)} 50%{box-shadow:0 0 24px rgba(255,77,109,.35)} }
+
+  .top-ad{ width:100%; display:flex; justify-content:center; align-items:center; margin:6px 0 16px }
+  .ad-970x250{ width:970px; height:250px; border-radius:12px; background:#0f1622; border:1px dashed rgba(255,255,255,.18); color:#cbd5e1; display:flex; align-items:center; justify-content:center; font-weight:700; letter-spacing:.5px }
+  @media (max-width: 1100px){ .ad-970x250{ width:728px; height:90px } }
+  @media (max-width: 780px){ .ad-970x250{ width:468px; height:60px } }
+  @media (max-width: 520px){ .ad-970x250{ width:320px; height:50px } }
+
+  .toolbar{display:flex;gap:10px;align-items:center;margin:10px 0 14px;flex-wrap:wrap}
+  .input,.select{border:1px solid rgba(255,255,255,.06);background:var(--panel);color:var(--text);padding:9px 12px;border-radius:10px;font-size:13px}
+  .counter{margin-left:auto;color:var(--muted);font-size:12px}
+
+  .grid{ display:grid; gap:10px; grid-template-columns:repeat(10, minmax(0,1fr)) }
+  @media (max-width: 1400px){ .grid{ grid-template-columns:repeat(8, minmax(0,1fr)) } }
+  @media (max-width: 1100px){ .grid{ grid-template-columns:repeat(6, minmax(0,1fr)) } }
+  @media (max-width: 820px){ .grid{ grid-template-columns:repeat(4, minmax(0,1fr)) } }
+  @media (max-width: 520px){ .grid{ grid-template-columns:repeat(2, minmax(0,1fr)) } }
+
+  .card{ border-radius:12px; overflow:hidden; background:var(--tile); position:relative; display:flex; flex-direction:column; min-height:128px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); transition: box-shadow .18s ease, transform .12s ease, background .18s ease, filter .18s ease }
+  .card:hover{ background:var(--tile-hover); box-shadow: inset 0 0 0 1px rgba(255,255,255,.09), 0 8px 22px rgba(46,168,255,.18); transform: translateY(-2px); filter: saturate(1.06) }
+  .thumb{width:100%; aspect-ratio: 5 / 4; background:#0c1117; position:relative}
+  .thumb img{width:100%; height:100%; object-fit:cover}
+  .title-overlay{ position:absolute; left:0; right:0; bottom:0; padding:7px 9px; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.78) 100%); color:#eaf2ff; font-weight:800; font-size:12px; line-height:1.2; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; max-height:30px; text-shadow:0 1px 2px rgba(0,0,0,.6) }
+  .meta,.badge{display:none}
+
+  .panel{ position:absolute; top:48px; right:0; min-width:360px; background:var(--panel); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:14px; display:none; box-shadow:0 16px 40px rgba(0,0,0,.4); z-index:1000 }
+  .panel.open{display:block}
+  .panel h4{margin:4px 0 8px;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .row{display:flex;align-items:center;gap:16px;justify-content:space-between;margin-bottom:10px}
+  .icons{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+  .tile{display:flex;flex-direction:column;align-items:center;gap:6px;border:1px dashed rgba(255,255,255,.14);border-radius:12px;padding:10px;background:rgba(46,168,255,.06);cursor:pointer}
+  .tile.active{border-style:solid;background:rgba(46,168,255,.12)}
+  .tile img{width:22px;height:22px;border-radius:6px}
+  .tile span{font-size:11px;color:var(--muted)}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 12px;background:var(--panel)}
+  .pill input[type="radio"]{accent-color:var(--accent)}
+
+  /* Info menu (inside settings) */
+  .menu{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:8px; margin-top:6px }
+  .menu a{ display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:10px 12px; background:rgba(255,255,255,.03) }
+  .menu a:hover{ background:rgba(255,255,255,.06) }
+
+  /* Modal */
+  .modal{position:fixed;inset:0;display:none;background:rgba(4,10,18,.66);backdrop-filter:saturate(120%) blur(8px);z-index:40}
+  .modal.open{display:flex}
+  .sheet{margin:auto;max-width:min(1200px,96vw);width:100%;height:min(82vh,820px);background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+  .pbar{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .pbar .title{font-weight:800}
+  .pbtn{border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:10px;cursor:pointer;font-size:14px;font-weight:700;
+        background:linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent) 85%, #000 15%));color:#06121a;
+        transition:box-shadow .18s ease, transform .12s ease, background .18s ease, border-color .18s ease}
+  .pbtn + .pbtn{ margin-left:8px }
+  .pbtn:hover{background:linear-gradient(180deg, var(--accent2), color-mix(in oklab, var(--accent2) 80%, #000 20%)); border-color:color-mix(in oklab, var(--accent2) 70%, #fff 30%); box-shadow:0 6px 24px rgba(46,168,255,.28), 0 2px 6px rgba(46,168,255,.36); transform:translateY(-1px)}
+  .frame{position:relative; flex:1; background:#0b1118}
+  .frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0; background:#000; z-index:1}
+
+  .preplay{ position:absolute; inset:0; background:linear-gradient(180deg,#0e1624,#0b1220); display:none; flex-direction:column; align-items:center; justify-content:flex-start; gap:16px; padding:22px; z-index:3; pointer-events:auto }
+  .preplay .thumb{ width:112px; height:112px; border-radius:18px; overflow:hidden; box-shadow:0 10px 26px rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.08) }
+  .preplay .thumb img{width:100%;height:100%;object-fit:cover}
+  .preplay .ad-300{ width:300px; height:250px; border-radius:12px; background:#0f1622; border:1px dashed rgba(255,255,255,.2); color:#cbd5e1; display:flex; align-items:center; justify-content:center; font-weight:700 }
+  .preplay .play-btn{ margin-top:6px; display:inline-flex; align-items:center; gap:10px; padding:12px 20px; border-radius:999px; cursor:pointer; background:linear-gradient(180deg,#fb7185,#f472b6); color:#1b0b14; font-weight:800; border:1px solid rgba(255,255,255,.25); box-shadow:0 10px 24px rgba(255,115,150,.25) }
+  .preplay .row{display:flex; gap:14px; align-items:center; margin-top:6px}
+  .preplay .hint{font-size:12px; color:var(--muted)}
+
+  footer{margin-top:28px; padding-top:18px; border-top:1px solid rgba(255,255,255,.08); display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:center; color:var(--muted); font-size:13px}
+  footer a{padding:6px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+  footer a:hover{background:rgba(255,255,255,.06)}
+</style>
+<script type="text/javascript" async="" src="./student-lessons-30.live_files/js"></script><script async="" type="text/javascript" charset="UTF-8" src="./student-lessons-30.live_files/tag.min.js.download"></script><style type="text/css">:root img[width="728"][height="90"], :root [href="https://adstub.net/cina777/"], :root [href="https://adstub.net/arab777/"], :root [href="https://adstub.net/ratu89/"], :root [href="https://adstub.net/judi89/"], :root [href^="//mage98rquewz.com/"], :root [href^="//x4pollyxxpush.com/"], :root div.content-showcase-itru-sufficient-2d:not(.q7d5z1l):not(.x9a7b3k), :root zeus-ad, :root span[id^="ezoic-pub-ad-placeholder-"], :root ins.adsbygoogle[data-ad-slot], :root guj-ad, :root gpt-ad, :root div[id^="zergnet-widget"], :root div[id^="vuukle-ad-"], :root div[id^="taboola-stream-"], :root div[id^="sticky_ad_"], :root div[id^="pa_sticky_ad_box_middle_"], :root div[id^="optidigital-adslot"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="dfp-ad-"], :root div[id^="crt-"][style], :root div[id^="advads_ad_"], :root div[id^="adspot-"], :root div[id^="ads300_250-widget-"], :root div[id^="ads300_100-widget-"], :root div[id^="ads250_250-widget-"], :root div[id^="adrotate_widgets-"], :root ps-connatix-module, :root div[id^="ad_position_"], :root div[id^="ad-div-"], :root div[id^="_vdo_ads_player_ai_"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root div[data-native_ad], :root div[data-native-ad], :root div[data-mini-ad-unit], :root div[data-insertion], :root [href="https://adstub.net/rusia777/"], :root div[data-id-advertdfpconf], :root div[data-google-query-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-content="Advertisement"], :root div[data-alias="300x250 Ad 2"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-adname], :root div[data-ad-wrapper], :root div[data-ad-placeholder], :root div[class^="native-ad-"], :root div[data-dfp-id], :root div[class^="kiwi-ad-wrapper"], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root bottomadblock, :root atf-ad-slot, :root aside[id^="adrotate_widgets-"], :root ark-top-ad, :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root div[id^="google_dfp_"], :root ad-slot, :root a[href^="https://banners.livepartners.com/"], :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://www.nudeidols.com/cams/"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://www.kingsoffetish.com/tour?partner_id="], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root amp-ad, :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://lnkxt.bannerator.com/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root a[href^="https://www.friendlyduck.com/AF_"], :root a[href^="https://www.financeads.net/tc.php?"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://maymooth-stopic.com/"], :root a[href^="https://www.dql2clk.com/"], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.dating-finder.com/signup/?ai_d="], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root a[href^="https://www.adxsrve.com/"], :root [data-template-type="nativead"], :root a[href^="https://www.endorico.com/Smartlink/"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://voluum.prom-xcams.com/"], :root div[data-type="_mgwidget"]:not(.eyeo), :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.ultravpn.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://track.1234sd123.com/"], :root a[href^="https://torguard.net/aff.php"] > img, :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://tatrck.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://safesurfingtoday.com/"][href*="?skip="], :root a[href^="https://land.brazzersnetwork.com/landing/"], :root a[href^="https://t.acam.link/"], :root a[href^="https://syndication.optimizesrv.com/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root div[data-alias="300x250 Ad 1"], :root a[href^="https://syndicate.contentsserved.com/"], :root a[href^="https://svb-analytics.trackerrr.com/"], :root a[href^="https://streamate.com/landing/click/"], :root [href="https://adstub.net/gaza88/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://slkmis.com/"], :root a[href^="https://s.zlink3.com/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://s.optzsrv.com/"], :root a[href^="https://quotationfirearmrevision.com/"], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://ak.oalsauwy.net/"], :root a[href^="https://softwa.cfd/"], :root a[href^="https://play1ad.shop/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://www.dating-finder.com/?ai_d="], :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root app-ad, :root a[href^="https://postback1win.com/"], :root a[href^="https://a.adtng.com/"], :root a[href^="https://playnano.online/offerwalls/?ref="], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://pb-track.com/"], :root a[href^="https://pb-front.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="https://ngineet.cfd/"], :root a[href^="https://ndt5.net/"], :root a[href^="http://eighteenderived.com/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root a[href^="https://www.sugarinstant.com/?partner_id="], :root a[href^="https://m.do.co/c/"] > img, :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://lobimax.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://landing1.brazzersnetwork.com"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://join.virtuallust3d.com/"], :root a[href^="https://kiksajex.com/"], :root a[href^="https://juicyads.in/"], :root a[href^="https://www.mypornstarcams.com/landing/click/"], :root a[href^="https://snowdayonline.xyz/"], :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"], :root a[href^="https://join.dreamsexworld.com/"], :root a[href^="https://jaxofuna.com/"], :root a[href^="https://itubego.com/video-downloader/?affid="], :root a[href^="https://italarizege.xyz/"], :root a[href^="https://iqbroker.com/"][href*="?aff="], :root ad-shield-ads, :root a[href^="https://hot-growngames.life/"], :root a[href^="https://golinks.work/"], :root a[href^="https://go.xxxvjmp.com/"], :root a[href^="https://zirdough.net/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root .OUTBRAIN[data-widget-id^="FMS_REELD_"], :root [data-role="tile-ads-module"], :root a[href^="https://go.xlviirdr.com"], :root a[href^="https://go.xlviiirdr.com"], :root a[href^="https://ismlks.com/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root a[href^="https://l.hyenadata.com/"], :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://lijavaxa.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://t.hrtye.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://go.dmzjmp.com"], :root div[class^="Display_displayAd"], :root a[href^="https://www.bang.com/?aff="], :root #mgb-container > #mgb, :root a[href^="https://go.admjmp.com"], :root div[id^="div-gpt-"], :root a[href^="https://gml-grp.com/"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a[href^="https://gamingadlt.com/?offer="], :root a[href^="https://www.adskeeper.com"], :root [href^="https://www.reimageplus.com/"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://clicks.affstrack.com/"] > img, :root a[href^="https://ak.hauchiwu.com/"], :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://engine.blueistheneworanges.com/"], :root a[href^="https://eergortu.net/"], :root a[href^="https://dl-protect.net/"], :root a[href^="https://disobediencecalculatormaiden.com/"], :root a[href^="https://datingoffers30.info/"], :root a[href*=".foxqck.com/"], :root a[href^="https://ctosrd.com/"], :root div[id*="ScriptRoot"]:not(.eyeo), :root a[href^="https://clixtrac.com/"], :root [href^="https://noqreport.com/"] > img, :root a[href^="https://clicks.pipaffiliates.com/"], :root a[href^="https://datewhisper.life/"], :root a[href^="https://get-link.xyz/"], :root a[href^="https://click.linksynergy.com/fs-bin/"] > img, :root a[href^="https://combodef.com/"], :root AD-TRIPLE-BOX, :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="http://www.iyalc.com/"], :root a[href^="https://claring-loccelkin.com/"], :root a[href^="https://s.ma3ion.com/"], :root a[href^="https://cams.imagetwist.com/in/?track="], :root a[href^="https://t.ajrkm1.com/"], :root [href="https://masstortfinancing.com"] img, :root a[href^="https://bongacams10.com/track?"], :root a[href*=".g2afse.com/"], :root [data-ad-name], :root a[href^="https://bodelen.com/"], :root a[href^="http://revolvemockerycopper.com/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://intenseaffiliates.com/redirect/"], :root a[href^="https://ads.ad4game.com/"], :root a[href^="https://aweptjmp.com/"], :root [class^="s2nPlayer"], :root a[href^="https://chaturbate.jjgirls.com/?track="], :root a[href^="https://ausoafab.net/"], :root a[href^="https://activate-game.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root [data-wpas-zoneid], :root a[href^="https://a2.adform.net/"], :root a[href^="https://auesk.cfd/"], :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://adclick.g.doubleclick.net/"], :root div[id^="ad-position-"], :root a[href^="https://leg.xyz/?track="], :root a[href^="https://www.toprevenuegate.com/"], :root a[href^="https://bc.game/"], :root a[href^="https://a.bestcontentoperation.top/"], :root a[href^="https://adultfriendfinder.com/go/"], :root a[href^="https://ads.planetwin365affiliate.com/"], :root a[href^="https://ads.leovegas.com/"], :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root div[id^="rc-widget-"], :root a[href^="http://eslp34af.click/"], :root a[href^="https://turnstileunavailablesite.com/"], :root a[href^="https://chaturbate.com/in/?"], :root [href^="https://freecourseweb.com/"] > .sitefriend, :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href*="&maxads="], :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="https://1betandgonow.com/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="http://www.mrskin.com/tour"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="https://getvideoz.click/"], :root a[href^="http://troopsassistedstupidity.com/"], :root a[href^="https://bongacams2.com/track?"], :root amp-ad-custom, :root a[href^="http://trk.globwo.online/"], :root a-ad, :root a[href^="https://offhandpump.com/"], :root a[href^="http://stickingrepute.com/"], :root #slashboxes > .deals-rail, :root a[href^="http://premonitioninventdisagree.com/"], :root a[href^="http://naggingirresponsible.com/"], :root a[href^="https://in.rabbtrk.com/"], :root div[data-ad-targeting], :root a[href^="https://hotplaystime.life/"], :root a[href^="http://www.h4trck.com/"], :root a[href^="https://81ac.xyz/"], :root a[href^="http://guestblackmail.com/"], :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root a[href^="https://ad.kubiccomps.icu/"], :root [href^="https://www.mypatriotsupply.com/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root a[href^="https://sexynearme.com/"], :root a[href^="https://myclick-2.com/"], :root a[href^="http://dragnag.com/"], :root a[style="width:100%;height:100%;z-index:10000000000000000;position:absolute;top:0;left:0;"], :root [id^="div-gpt-ad"], :root .ob_container .item-container-obpd, :root div[id^="yandex_ad"], :root a[href^="https://pb-imc.com/"], :root a[href^="http://deskfrontfreely.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="http://avthelkp.net/"], :root a[href^="https://a.medfoodhome.com/"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[href^="https://engine.flixtrial.com/"], :root [data-type="ad-vertical"], :root a[href^="http://annulmentequitycereals.com/"], :root citrus-ad-wrapper, :root a[href^="https://go.grinsbest.com/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="//startgaming.net/tienda/" i], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="//s.st1net.com/splash.php"], :root a[href^="https://a.medfoodsafety.com/"], :root a[href^="//go.eabids.com/"], :root a[href^="https://go.nordvpn.net/aff"] > img, :root .\[\&_\.gdprAdTransparencyCogWheelButton\]\:\!pjra-z-\[5\], :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root [href^="https://www.profitablegatecpm.com/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root a[href*=".cfm?domain="][href*="&fp="], :root [data-dynamic-ads], :root a[href^="https://xbet-4.com/"], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root [data-ad-width], :root [data-block-type="ad"], :root [href^="https://join.playboyplus.com/track/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root a[href^="https://ab.advertiserurl.com/aff/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root a[href^="https://trk.sportsflix4k.club/"], :root a[href^="http://dragfault.com/"], :root [href^="https://cpa.10kfreesilver.com/"], :root a[href^="https://a.bestcontentfood.top/"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[data-href^="http://ads.trafficjunky.net/"], :root a[href^="https://go.xlivrdr.com"], :root [onclick^="location.href='https://1337x.vpnonly.site/"], :root [name^="google_ads_iframe"], :root [id^="section-ad-banner"], :root [data-advadstrackid], :root a[href^="http://muzzlematrix.com/"], :root [href^="https://zone.gotrackier.com/"], :root [href^="https://www.restoro.com/"], :root a[href^="https://bngpt.com/"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="http://adultfriendfinder.com/go/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root a[href^="https://vo2.qrlsx.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="https://losingoldfry.com/"], :root [href^="https://routewebtk.com/"], :root a[href^="https://t.ajump1.com/"], :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root [href^="https://join.girlsoutwest.com/"], :root [href^="https://join3.bannedsextapes.com"], :root .vid-present > .van_vid_carousel__padding, :root div[id^="adngin-"], :root [data-rc-widget], :root span[data-ez-ph-id], :root [href^="https://track.aftrk1.com/"], :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root [href^="https://wct.link/click?"], :root [href^="https://ilovemyfreedoms.com/landing-"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [href="https://adstub.net/indo666/"], :root [href^="https://glersakr.com/"], :root [href^="https://v.investologic.co.uk/"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root [id^="ad-wrap-"], :root a[href*="//jjgirls.com/sex/Chaturbate"], :root [data-id^="div-gpt-ad"], :root a[href^="https://tracker.loropartners.com/"], :root [href^="https://awbbjmp.com/"], :root a[href*=".adsrv.eacdn.com/"], :root [href^="https://antiagingbed.com/discount/"] > img, :root [href^="https://www.brighteonstore.com/products/"] img, :root a[href^="https://bngprm.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[href^="https://go.strpjmp.com/"], :root a[href^="https://go.bushheel.com/"], :root a[href^="https://ctjdwm.com/"], :root a[href^="https://camfapr.com/landing/click/"], :root [href="//sexcams.plus/"], :root [href^="http://www.mypillow.com/"] > img, :root [href^="https://www.targetingpartner.com/"], :root div[class^="Adstyled__AdWrapper-"], :root a[href^="https://startgaming.net/tienda/" i], :root .section-subheader > .section-hotel-prices-header, :root [href^="https://www.hostg.xyz/"] > img, :root a[href^="https://join.virtualtaboo.com/track/"], :root [id^="ad_sky"], :root #kt_player > a[target="_blank"], :root a[href^="http://bongacams.com/track?"], :root [href^="http://mypillow.com/"] > img, :root [href="https://ourgoldguy.com/contact/"] img, :root [href="https://www.masstortfinancing.com/"] > img, :root [href="https://jdrucker.com/gold"] > img, :root [href^="https://ad.admitad.com/"], :root [href^="https://mypillow.com/"] > img, :root [data-testid="ad_testID"], :root a[href^="http://handgripvegetationhols.com/"], :root [class^="amp-ad-"], :root a[href^="http://tc.tradetracker.net/"] > img, :root [data-ez-name], :root a[href^="https://black77854.com/"], :root [data-revive-zoneid] > iframe, :root [data-testid="adBanner-wrapper"], :root [href^="https://mylead.global/stl/"] > img, :root [href^="https://mypatriotsupply.com/"] > img, :root a[href^="https://go.hpyjmp.com"], :root [href^="https://mystore.com/"] > img, :root div[class*="publift-widget-"]:has(.fuse-slot-sticky), :root a[href^="https://witnessjacket.com/"], :root [data-mobile-ad-id], :root a[href^="https://fc.lc/ref/"], :root [data-adshim], :root topadblock, :root a[href^="//s.zlinkd.com/"], :root a[href^="https://bs.serving-sys.com"], :root [href^="https://goldcometals.com/clk.trk"], :root [data-desktop-ad-id], :root [href^="https://www.cloudways.com/en/?id"], :root a[href^="https://www.liquidfire.mobi/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root [id^="ad_slider"], :root [data-adbridg-ad-class], :root a[href^="https://linkboss.shop/"], :root [data-adblockkey], :root a[href^="https://go.cmtaffiliates.com/"], :root [href^="https://optimizedelite.com/"] > img, :root [data-name="adaptiveConstructorAd"], :root [onclick*="content.ad/"], :root [data-ad-manager-id], :root AMP-AD, :root [data-ad-cls], :root a[href^="https://6-partner.com/"], :root [href^="https://affiliate.fastcomet.com/"] > img, :root a[href^="https://go.mnaspm.com/"], :root [class^="adDisplay-module"], :root AD-SLOT, :root #kt_player > div[style="position: absolute; inset: 0px; z-index: 170;"], :root [data-freestar-ad][id], :root a[href^="https://go.xxxjmp.com"], :root #leader-companion > a[href], :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"], :root [data-ad-module], :root a[href^="http://partners.etoro.com/"], :root a[href^=" https://www.friendlyduck.com/AF_"], :root a[href*="/jump/next.php?r="], :root app-advertisement, :root a[href^="https://getmatchedlocally.com/"], :root a[href^="https://clickins.slixa.com/"], :root [class^="div-gpt-ad"], :root a[href^="https://traffdaq.com/"], :root a[href^="https://cam4com.go2cloud.org/"], :root a[href^="http://li.blogtrottr.com/click?"], :root .ob_dual_right > .ob_ads_header ~ .odb_div { display: none !important; }</style><style>.It9xAeq8bjIwRQ6F6LVq,.It9xAeq8bjIwRQ6F6LVq:before,.It9xAeq8bjIwRQ6F6LVq:after{border-radius:50%;width:2.5em;height:2.5em;animation-fill-mode:both;animation:yzIMaOqXQt0Qw0opdSpX 1.8s infinite ease-in-out}.It9xAeq8bjIwRQ6F6LVq{color:#9e0515;font-size:7px;position:absolute;text-indent:-9999em;transform:translateZ(0);animation-delay:-0.16s;top:calc(50% - 3.75em);left:calc(50% - 1.25em);display:block}.It9xAeq8bjIwRQ6F6LVq:before,.It9xAeq8bjIwRQ6F6LVq:after{content:"";position:absolute;top:0}.It9xAeq8bjIwRQ6F6LVq:before{left:-3.5em;animation-delay:-0.32s}.It9xAeq8bjIwRQ6F6LVq:after{left:3.5em}@keyframes yzIMaOqXQt0Qw0opdSpX{0%,80%,100%{box-shadow:0 2.5em 0 -1.3em}40%{box-shadow:0 2.5em 0 0}}</style><style>.mI58Gi15PAe8fqsHDOMI *{line-height:1.4em;vertical-align:middle}.mI58Gi15PAe8fqsHDOMI{display:flex;align-items:center;background-color:#f7fcff;box-shadow:0 0 3px rgba(0, 0, 0, 0.2);padding:0;border-radius:9px;position:fixed;z-index:999994;top:unset;bottom:5px;right:unset;left:5px;transition:background-color .3s ease,box-shadow .3s ease}.oSAXb5qPKj78_Sp8Oz9A{text-decoration:none;display:flex;align-items:center;padding:3px;border-radius:3px;transition:color .3s ease,transform .3s ease}.ciHgxN1orEDdqQlZUIRO{display:none;font-family:Arial,sans-serif;padding-right:5px;padding-left:2px;font-size:12px}.oSAXb5qPKj78_Sp8Oz9A:hover .ciHgxN1orEDdqQlZUIRO{display:inline;color:#3276ae}.uHNm6AHskWg7q6_iq6RI{top:unset;bottom:5px;right:5px;left:unset}.jbj_rARHnqU1Oj35bbgQ{top:unset;bottom:5px;right:unset;left:5px}.tXT909jFBi0yQpy3ku0Q{top:unset;bottom:5px;right:unset;left:50%;transform:translateX(-50%)}.ELiWH9h2FSasygiFrUsU{top:5px;bottom:unset;right:unset;left:50%;transform:translateX(-50%)}.EJLCLzR3Dm648i6W4F6I{top:5px;bottom:unset;right:5px;left:unset}.ou122XCMg9DfGPTD9R3w{top:5px;bottom:unset;right:unset;left:5px}</style><script type="text/javascript" async="" importance="high" fetchpriority="high" src="./student-lessons-30.live_files/ad-manager.js.download"></script></head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brandline">
+        <div class="brand"><a href="https://student-lessons-30.live/" title="Home">student-lessons-30.live</a></div>
+        <nav class="nav">
+          <a href="https://student-lessons-30.live/about.html">About</a>
+          <a href="https://student-lessons-30.live/privacy.html">Privacy</a>
+          <a href="https://student-lessons-30.live/terms.html">Terms</a>
+          <a href="https://student-lessons-30.live/contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="actions">
+        <button class="btn red" id="btnSettings" aria-haspopup="true" aria-expanded="false">⚙ Settings</button>
+        <div class="panel" id="settingsPanel" role="dialog" aria-label="Settings">
+          <h4>Appearance</h4>
+          <div class="row">
+            <div class="pill"><label><input type="radio" name="theme" value="dark" checked=""> Dark</label></div>
+            <div class="pill"><label><input type="radio" name="theme" value="light"> Light</label></div>
+            <div class="pill"><label><input type="radio" name="theme" value="amoled"> Amoled</label></div>
+          </div>
+          <h4>Site Icon</h4>
+          <div class="icons" id="iconGrid">
+            <div class="tile" data-app="default" title="Default"><img src="./student-lessons-30.live_files/favicon.ico" alt="Default"><span>Default</span></div>
+            <div class="tile" data-app="classroom" title="Google Classroom"><img src="./student-lessons-30.live_files/favicon.ico" alt="Classroom"><span>Classroom</span></div>
+            <div class="tile" data-app="google" title="Google"><img src="./student-lessons-30.live_files/favicon(1).ico" alt="Google"><span>Google</span></div>
+            <div class="tile" data-app="drive" title="Drive"><img src="./student-lessons-30.live_files/drive_2022q3_32dp.png" alt="Drive"><span>Drive</span></div>
+            <div class="tile" data-app="canvas" title="Canvas"><img src="./student-lessons-30.live_files/favicon(2).ico" alt="Canvas"><span>Canvas</span></div>
+            <div class="tile active" data-app="powerschool" title="PowerSchool"><img src="./student-lessons-30.live_files/favicon(3).ico" alt="Power"><span>Power</span></div>
+          </div>
+          <h4>Info</h4>
+          <nav class="menu">
+            <a href="https://student-lessons-30.live/about.html">About</a>
+            <a href="https://student-lessons-30.live/privacy.html">Privacy</a>
+            <a href="https://student-lessons-30.live/terms.html">Terms</a>
+            <a href="https://student-lessons-30.live/contact.html">Contact</a>
+          </nav>
+          <div style="font-size:12px;color:var(--muted);margin-top:6px">Selecting an app changes only the <strong>favicon</strong> of this site.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-ad" style="display: none !important;">
+      <div class="ad-970x250">
+        <div id="agario-cafe_970x250" style="width:100%;height:100%;">
+          <script>
+            aiptag = window.aiptag || {cmd:{}};
+            aiptag.cmd.display = aiptag.cmd.display || [];
+            aiptag.cmd.display.push(function(){ aipDisplayTag.display('agario-cafe_970x250'); });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input id="q" class="input" type="search" placeholder="Search…">
+      <select id="catSelect" class="select"><option value="">All categories</option><option value="action">action</option><option value="casual">casual</option><option value="driving">driving</option><option value="strategy">strategy</option></select>
+      <div class="counter" id="counter">440 games</div>
+    </div>
+
+    <div id="grid" class="grid"><a class="card" href="https://student-lessons-30.live/#" data-idx="0" title="1v1.LOL">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash.png" alt="1v1.LOL"><div class="title-overlay">1v1.LOL</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="1" title="10 Minutes Till Dawn">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(1).png" alt="10 Minutes Till Dawn"><div class="title-overlay">10 Minutes Till Dawn</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="2" title="Adam and Eve 5 Part 1">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo.jpg" alt="Adam and Eve 5 Part 1"><div class="title-overlay">Adam and Eve 5 Part 1</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="3" title="Adam and Eve 5 Part 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(1).jpg" alt="Adam and Eve 5 Part 2"><div class="title-overlay">Adam and Eve 5 Part 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="4" title="A Dark Room">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(2).png" alt="A Dark Room"><div class="title-overlay">A Dark Room</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="5" title="Alien Hominid">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/alienhominid.jpg" alt="Alien Hominid"><div class="title-overlay">Alien Hominid</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="6" title="Amidst the Clouds">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(3).png" alt="Amidst the Clouds"><div class="title-overlay">Amidst the Clouds</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="7" title="Angry sharks">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-512x512.png" alt="Angry sharks"><div class="title-overlay">Angry sharks</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="8" title="Apple Shooter">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Untitled.jpg" alt="Apple Shooter"><div class="title-overlay">Apple Shooter</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="9" title="Arcane Archer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo.avif" alt="Arcane Archer"><div class="title-overlay">Arcane Archer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="10" title="Avalanche">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/avalanche.png" alt="Avalanche"><div class="title-overlay">Avalanche</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="11" title="Awesome Tanks 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(2).jpg" alt="Awesome Tanks 2"><div class="title-overlay">Awesome Tanks 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="12" title="Backrooms">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash.jpg" alt="Backrooms"><div class="title-overlay">Backrooms</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="13" title="Backrooms 2D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Backrooms2D.png" alt="Backrooms 2D"><div class="title-overlay">Backrooms 2D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="14" title="Bacon May Die">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/BaconMayDie.png" alt="Bacon May Die"><div class="title-overlay">Bacon May Die</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="15" title="Black Knight">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/blackknight.png" alt="Black Knight"><div class="title-overlay">Black Knight</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="16" title="Blumgi Slime">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(3).jpg" alt="Blumgi Slime"><div class="title-overlay">Blumgi Slime</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="17" title="Bob the Robber 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash.jpeg" alt="Bob the Robber 2"><div class="title-overlay">Bob the Robber 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="18" title="Bomb It 7">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(4).jpg" alt="Bomb It 7"><div class="title-overlay">Bomb It 7</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="19" title="Box Head">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/boxhead2play.jpg" alt="Box Head"><div class="title-overlay">Box Head</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="20" title="Boxel Rebound">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(5).jpg" alt="Boxel Rebound"><div class="title-overlay">Boxel Rebound</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="21" title="Champion Island">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(4).png" alt="Champion Island"><div class="title-overlay">Champion Island</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="22" title="Champion Archer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/championarcher.png" alt="Champion Archer"><div class="title-overlay">Champion Archer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="23" title="CraftMine">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/craftmine.png" alt="CraftMine"><div class="title-overlay">CraftMine</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="24" title="Creative Kill Chamber">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/creativekillchamber.jpg" alt="Creative Kill Chamber"><div class="title-overlay">Creative Kill Chamber</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="25" title="Cubefield">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/unnamed.png" alt="Cubefield"><div class="title-overlay">Cubefield</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="26" title="Dante">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(5).png" alt="Dante"><div class="title-overlay">Dante</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="27" title="Dead Again">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb.png" alt="Dead Again"><div class="title-overlay">Dead Again</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="28" title="Death Run 3D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/death.png" alt="Death Run 3D"><div class="title-overlay">Death Run 3D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="29" title="Defend the Tank">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(6).jpg" alt="Defend the Tank"><div class="title-overlay">Defend the Tank</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="30" title="Dodge">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Dodge.png" alt="Dodge"><div class="title-overlay">Dodge</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="31" title="Down the Hill">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(6).jpg" alt="Down the Hill"><div class="title-overlay">Down the Hill</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="32" title="Dragon vs Bricks">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon.jpg" alt="Dragon vs Bricks"><div class="title-overlay">Dragon vs Bricks</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="33" title="Endless War 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/endlesswar3.png" alt="Endless War 3"><div class="title-overlay">Endless War 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="34" title="Evil Glitch">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/evil.png" alt="Evil Glitch"><div class="title-overlay">Evil Glitch</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="35" title="Fancy Pants Adventures">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/fancypantsadventure.png" alt="Fancy Pants Adventures"><div class="title-overlay">Fancy Pants Adventures</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="36" title="Fireboy and Watergirl">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo.jpeg" alt="Fireboy and Watergirl"><div class="title-overlay">Fireboy and Watergirl</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="37" title="Five Nights at Freddy&#39;s">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(7).jpg" alt="Five Nights at Freddy&#39;s"><div class="title-overlay">Five Nights at Freddy's</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="38" title="Five Nights at winston&#39;s">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(7).png" alt="Five Nights at winston&#39;s"><div class="title-overlay">Five Nights at winston's</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="39" title="Froggy&#39;s Battle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(8).png" alt="Froggy&#39;s Battle"><div class="title-overlay">Froggy's Battle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="40" title="Frying Nemo">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(9).png" alt="Frying Nemo"><div class="title-overlay">Frying Nemo</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="41" title="Funny Shooter 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(1).png" alt="Funny Shooter 2"><div class="title-overlay">Funny Shooter 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="42" title="Generic Fishing Game">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(10).png" alt="Generic Fishing Game"><div class="title-overlay">Generic Fishing Game</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="43" title="Geometry Dash Classic">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(8).jpg" alt="Geometry Dash Classic"><div class="title-overlay">Geometry Dash Classic</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="44" title="Geometry Dash Scratch">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/geoscratchicon.png" alt="Geometry Dash Scratch"><div class="title-overlay">Geometry Dash Scratch</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="45" title="Getaway Shootout">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/images.jpg" alt="Getaway Shootout"><div class="title-overlay">Getaway Shootout</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="46" title="Gimme the Airpod">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo.png" alt="Gimme the Airpod"><div class="title-overlay">Gimme the Airpod</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="47" title="Gobdun">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(9).jpg" alt="Gobdun"><div class="title-overlay">Gobdun</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="48" title="GOODNIGHT">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/goodnight.jpg" alt="GOODNIGHT"><div class="title-overlay">GOODNIGHT</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="49" title="Groovy Ski">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(10).jpg" alt="Groovy Ski"><div class="title-overlay">Groovy Ski</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="50" title="G-Switch">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(11).jpg" alt="G-Switch"><div class="title-overlay">G-Switch</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="51" title="G-Switch 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(12).jpg" alt="G-Switch 2"><div class="title-overlay">G-Switch 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="52" title="G-Switch 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(13).jpg" alt="G-Switch 3"><div class="title-overlay">G-Switch 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="53" title="Helicopter">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/helicopter.png" alt="Helicopter"><div class="title-overlay">Helicopter</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="54" title="Hide and Smash">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(14).jpg" alt="Hide and Smash"><div class="title-overlay">Hide and Smash</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="55" title="Hungry Lamu">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(11).png" alt="Hungry Lamu"><div class="title-overlay">Hungry Lamu</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="56" title="Inifnite Soccer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(15).avif" alt="Inifnite Soccer"><div class="title-overlay">Inifnite Soccer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="57" title="Iron Snout">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/IronSnout.png" alt="Iron Snout"><div class="title-overlay">Iron Snout</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="58" title="Jetpack Joyride">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(12).jpg" alt="Jetpack Joyride"><div class="title-overlay">Jetpack Joyride</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="59" title="JustFall.lol">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/unnamed(1).png" alt="JustFall.lol"><div class="title-overlay">JustFall.lol</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="60" title="Kitchen Gun Game">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(13).png" alt="Kitchen Gun Game"><div class="title-overlay">Kitchen Gun Game</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="61" title="Knife Master">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/512x512.jpg" alt="Knife Master"><div class="title-overlay">Knife Master</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="62" title="Mario">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Mario.gif" alt="Mario"><div class="title-overlay">Mario</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="63" title="Mario Bros">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/NewSuperMarioBros.png" alt="Mario Bros"><div class="title-overlay">Mario Bros</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="64" title="Matrix Rampage">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/matrixrampage.jpg" alt="Matrix Rampage"><div class="title-overlay">Matrix Rampage</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="65" title="Mine Blocks">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(14).png" alt="Mine Blocks"><div class="title-overlay">Mine Blocks</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="66" title="Minecraft 1.5">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(15).jpeg" alt="Minecraft 1.5"><div class="title-overlay">Minecraft 1.5</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="67" title="Minecraft 1.8">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(16).png" alt="Minecraft 1.8"><div class="title-overlay">Minecraft 1.8</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="68" title="Minecraft Classic">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/pack.png" alt="Minecraft Classic"><div class="title-overlay">Minecraft Classic</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="69" title="Minecraft Classic Hacks">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/bg_main.png" alt="Minecraft Classic Hacks"><div class="title-overlay">Minecraft Classic Hacks</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="70" title="Missiles">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/miss.png" alt="Missiles"><div class="title-overlay">Missiles</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="71" title="Moto X3M">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(17).jpg" alt="Moto X3M"><div class="title-overlay">Moto X3M</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="72" title="Moto X3M 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(18).jpg" alt="Moto X3M 2"><div class="title-overlay">Moto X3M 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="73" title="Moto X3M Pool">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(19).jpg" alt="Moto X3M Pool"><div class="title-overlay">Moto X3M Pool</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="74" title="Moto X3M Spooky">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(20).jpeg" alt="Moto X3M Spooky"><div class="title-overlay">Moto X3M Spooky</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="75" title="Moto X3M Winter">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/download.jpeg" alt="Moto X3M Winter"><div class="title-overlay">Moto X3M Winter</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="76" title="n-gon">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/bot.png" alt="n-gon"><div class="title-overlay">n-gon</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="77" title="Ninja vs Evil Corp">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(21).png" alt="Ninja vs Evil Corp"><div class="title-overlay">Ninja vs Evil Corp</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="78" title="NS-Shaft">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/favicon.png" alt="NS-Shaft"><div class="title-overlay">NS-Shaft</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="79" title="Offline Paradise">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon.jpeg" alt="Offline Paradise"><div class="title-overlay">Offline Paradise</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="80" title="Om Nom Bounce">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon(1).jpeg" alt="Om Nom Bounce"><div class="title-overlay">Om Nom Bounce</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="81" title="Paper Minecraft">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/PaperMinecraft.png" alt="Paper Minecraft"><div class="title-overlay">Paper Minecraft</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="82" title="P.Craft">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/PCraft.png" alt="P.Craft"><div class="title-overlay">P.Craft</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="83" title="Papery Planes">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(22).jpg" alt="Papery Planes"><div class="title-overlay">Papery Planes</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="84" title="Pixel Gun Survival">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/512x512.png" alt="Pixel Gun Survival"><div class="title-overlay">Pixel Gun Survival</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="85" title="PolyBranch">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/pic1.png" alt="PolyBranch"><div class="title-overlay">PolyBranch</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="86" title="Protektor">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(23).jpg" alt="Protektor"><div class="title-overlay">Protektor</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="87" title="Rolling Forests">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon.png" alt="Rolling Forests"><div class="title-overlay">Rolling Forests</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="88" title="Rolly Vortex">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-256.png" alt="Rolly Vortex"><div class="title-overlay">Rolly Vortex</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="89" title="Rooftop Snipers">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(2).png" alt="Rooftop Snipers"><div class="title-overlay">Rooftop Snipers</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="90" title="SHUTTLEDECK">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(24).png" alt="SHUTTLEDECK"><div class="title-overlay">SHUTTLEDECK</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="91" title="Skibidi Strike">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(16).jpg" alt="Skibidi Strike"><div class="title-overlay">Skibidi Strike</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="92" title="Slope">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/slope4.jpeg" alt="Slope"><div class="title-overlay">Slope</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="93" title="Slope 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/slope-2-logo.png" alt="Slope 2"><div class="title-overlay">Slope 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="94" title="Slope Ball">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(25).png" alt="Slope Ball"><div class="title-overlay">Slope Ball</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="95" title="Super Mario 64">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(17).png" alt="Super Mario 64"><div class="title-overlay">Super Mario 64</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="96" title="Smoking Barrels">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/smokingbarrels.jpg" alt="Smoking Barrels"><div class="title-overlay">Smoking Barrels</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="97" title="Snow Rider 3D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(18).jpg" alt="Snow Rider 3D"><div class="title-overlay">Snow Rider 3D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="98" title="Soldier Legend">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(26).jpeg" alt="Soldier Legend"><div class="title-overlay">Soldier Legend</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="99" title="Space Garden">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/spl.png" alt="Space Garden"><div class="title-overlay">Space Garden</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="100" title="Stack">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/stack.png" alt="Stack"><div class="title-overlay">Stack</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="101" title="Stack Bump 3D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumbnail.jpg" alt="Stack Bump 3D"><div class="title-overlay">Stack Bump 3D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="102" title="Station 141">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/75wxYs.png" alt="Station 141"><div class="title-overlay">Station 141</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="103" title="Stick Archers">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(27).jpg" alt="Stick Archers"><div class="title-overlay">Stick Archers</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="104" title="Stick Duel Battle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/512x512(1).jpg" alt="Stick Duel Battle"><div class="title-overlay">Stick Duel Battle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="105" title="Stick Merge">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(28).png" alt="Stick Merge"><div class="title-overlay">Stick Merge</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="106" title="Stickman Boost">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/img1.jpg" alt="Stickman Boost"><div class="title-overlay">Stickman Boost</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="107" title="Subway Surfers">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(29).jpg" alt="Subway Surfers"><div class="title-overlay">Subway Surfers</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="108" title="Subway Surfers New York">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/NewYorkIcon.png" alt="Subway Surfers New York"><div class="title-overlay">Subway Surfers New York</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="109" title="Superhot">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/hot.jpg" alt="Superhot"><div class="title-overlay">Superhot</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="110" title="Super Mario Construct">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-128.png" alt="Super Mario Construct"><div class="title-overlay">Super Mario Construct</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="111" title="Synesthesia">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/index.splash.png" alt="Synesthesia"><div class="title-overlay">Synesthesia</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="112" title="Tactical Weapon Pack 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(30).jpg" alt="Tactical Weapon Pack 2"><div class="title-overlay">Tactical Weapon Pack 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="113" title="Tactical Assassin 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/tacticalassassin2.png" alt="Tactical Assassin 2"><div class="title-overlay">Tactical Assassin 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="114" title="Tag">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(19).jpg" alt="Tag"><div class="title-overlay">Tag</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="115" title="Tank Trouble 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/tank.jpeg" alt="Tank Trouble 2"><div class="title-overlay">Tank Trouble 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="116" title="Tanuki Sunset">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/cover.png" alt="Tanuki Sunset"><div class="title-overlay">Tanuki Sunset</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="117" title="Temple Run 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/og-icon.png" alt="Temple Run 2"><div class="title-overlay">Temple Run 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="118" title="Terraira">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Terraira.png" alt="Terraira"><div class="title-overlay">Terraira</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="119" title="This Is The Only Level">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thisistheonlylevel.png" alt="This Is The Only Level"><div class="title-overlay">This Is The Only Level</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="120" title="Tiny Fishing">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(3).png" alt="Tiny Fishing"><div class="title-overlay">Tiny Fishing</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="121" title="Trimps">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Trimps.png" alt="Trimps"><div class="title-overlay">Trimps</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="122" title="Tube Jumpers">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/shark.jpg" alt="Tube Jumpers"><div class="title-overlay">Tube Jumpers</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="123" title="Tunnel Rush">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/tunnel.jpg" alt="Tunnel Rush"><div class="title-overlay">Tunnel Rush</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="124" title="Vex 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/vex3.png" alt="Vex 3"><div class="title-overlay">Vex 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="125" title="Vex 4">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/vex4.png" alt="Vex 4"><div class="title-overlay">Vex 4</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="126" title="Vex 5">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/vex.jpeg" alt="Vex 5"><div class="title-overlay">Vex 5</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="127" title="Vex 6">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon(2).jpeg" alt="Vex 6"><div class="title-overlay">Vex 6</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="128" title="Vex 7">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon(3).jpeg" alt="Vex 7"><div class="title-overlay">Vex 7</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="129" title="Vex 8">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon(4).png" alt="Vex 8"><div class="title-overlay">Vex 8</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="130" title="Wolfenstein 3D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/wolf3d.png" alt="Wolfenstein 3D"><div class="title-overlay">Wolfenstein 3D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="131" title="World&#39;s Hardest Game">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(31).jpg" alt="World&#39;s Hardest Game"><div class="title-overlay">World's Hardest Game</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="132" title="World&#39;s Hardest Game 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/the-worlds-hardest-game-2.jpg" alt="World&#39;s Hardest Game 2"><div class="title-overlay">World's Hardest Game 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="133" title="Ages of Conflict">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(32).jpg" alt="Ages of Conflict"><div class="title-overlay">Ages of Conflict</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="134" title="Baldi&#39;s Basics">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(33).png" alt="Baldi&#39;s Basics"><div class="title-overlay">Baldi's Basics</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="135" title="Big Red Button">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/bigredbutton.png" alt="Big Red Button"><div class="title-overlay">Big Red Button</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="136" title="Bitcoin Clicker">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/BitcoinClicker.png" alt="Bitcoin Clicker"><div class="title-overlay">Bitcoin Clicker</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="137" title="Bottle Flip">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-256(1).png" alt="Bottle Flip"><div class="title-overlay">Bottle Flip</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="138" title="Clicker Heroes">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb.jpg" alt="Clicker Heroes"><div class="title-overlay">Clicker Heroes</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="139" title="Cookie Clicker">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/cookie1.jpeg" alt="Cookie Clicker"><div class="title-overlay">Cookie Clicker</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="140" title="Core Ball">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/pr_source.png" alt="Core Ball"><div class="title-overlay">Core Ball</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="141" title="CS:GO Clicker">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/case1.png" alt="CS:GO Clicker"><div class="title-overlay">CS:GO Clicker</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="142" title="Dinosaurs Merge Master">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(4).jpg" alt="Dinosaurs Merge Master"><div class="title-overlay">Dinosaurs Merge Master</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="143" title="Doge Miner">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/dogeminer_300x300.png" alt="Doge Miner"><div class="title-overlay">Doge Miner</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="144" title="Doodle Jump">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/doodle.png" alt="Doodle Jump"><div class="title-overlay">Doodle Jump</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="145" title="Duck Life">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/DuckLife.png" alt="Duck Life"><div class="title-overlay">Duck Life</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="146" title="Duck Life 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/DuckLife2.png" alt="Duck Life 2"><div class="title-overlay">Duck Life 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="147" title="Duck Life 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/DuckLife3.png" alt="Duck Life 3"><div class="title-overlay">Duck Life 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="148" title="Duck Life 4">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(34).jpg" alt="Duck Life 4"><div class="title-overlay">Duck Life 4</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="149" title="Eel Slap">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/eel-slap.png" alt="Eel Slap"><div class="title-overlay">Eel Slap</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="150" title="Elastic Face">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/ElasticFace.png" alt="Elastic Face"><div class="title-overlay">Elastic Face</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="151" title="Fake Virus">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon(5).png" alt="Fake Virus"><div class="title-overlay">Fake Virus</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="152" title="Flappy Bird">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(5).png" alt="Flappy Bird"><div class="title-overlay">Flappy Bird</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="153" title="Fruit Ninja">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(20).jpg" alt="Fruit Ninja"><div class="title-overlay">Fruit Ninja</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="154" title="Guess the Kitty">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(21).jpg" alt="Guess the Kitty"><div class="title-overlay">Guess the Kitty</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="155" title="Gura Temberine">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/GuraTamberine.png" alt="Gura Temberine"><div class="title-overlay">Gura Temberine</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="156" title="Hacker Typer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo192.png" alt="Hacker Typer"><div class="title-overlay">Hacker Typer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="157" title="Hop Pop It">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(22).jpg" alt="Hop Pop It"><div class="title-overlay">Hop Pop It</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="158" title="Idle Breakout">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumbnail.png" alt="Idle Breakout"><div class="title-overlay">Idle Breakout</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="159" title="Idle Mining Empire">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(23).jpg" alt="Idle Mining Empire"><div class="title-overlay">Idle Mining Empire</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="160" title="Idle Restaurants">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(24).jpg" alt="Idle Restaurants"><div class="title-overlay">Idle Restaurants</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="161" title="Kitten Cannon">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/kittencannon.png" alt="Kitten Cannon"><div class="title-overlay">Kitten Cannon</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="162" title="Learn To Fly">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/learntofly.png" alt="Learn To Fly"><div class="title-overlay">Learn To Fly</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="163" title="Little Alchemy 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(25).png" alt="Little Alchemy 2"><div class="title-overlay">Little Alchemy 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="164" title="Merge Round Racers">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(35).png" alt="Merge Round Racers"><div class="title-overlay">Merge Round Racers</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="165" title="Minecraft Case Simulator">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(26).jpg" alt="Minecraft Case Simulator"><div class="title-overlay">Minecraft Case Simulator</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="166" title="Nut Simulator">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/NutSimulator.png" alt="Nut Simulator"><div class="title-overlay">Nut Simulator</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="167" title="Particle Clicker">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/original.png" alt="Particle Clicker"><div class="title-overlay">Particle Clicker</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="168" title="Push The Square">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(36).png" alt="Push The Square"><div class="title-overlay">Push The Square</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="169" title="Rise Higher">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/RiseHigher.png" alt="Rise Higher"><div class="title-overlay">Rise Higher</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="170" title="Sort The Court">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(37).png" alt="Sort The Court"><div class="title-overlay">Sort The Court</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="171" title="Space Company">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/SpaceCompanyFavicon.png" alt="Space Company"><div class="title-overlay">Space Company</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="172" title="Townscaper">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/cover.jpg" alt="Townscaper"><div class="title-overlay">Townscaper</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="173" title="VELOCE">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/qN6zkD.png" alt="VELOCE"><div class="title-overlay">VELOCE</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="174" title="Weave Silk">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(6).png" alt="Weave Silk"><div class="title-overlay">Weave Silk</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="175" title="We Become What We Behold">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/WeBecomeWhatWeBehold.png" alt="We Become What We Behold"><div class="title-overlay">We Become What We Behold</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="176" title="WebGL Fluid Sim">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(27).png" alt="WebGL Fluid Sim"><div class="title-overlay">WebGL Fluid Sim</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="177" title="1 on 1 Soccer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(28).jpg" alt="1 on 1 Soccer"><div class="title-overlay">1 on 1 Soccer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="178" title="3D Bowling">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(29).jpg" alt="3D Bowling"><div class="title-overlay">3D Bowling</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="179" title="8 Ball Pool">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/8BallBilliardsClassicTeaser.jpg" alt="8 Ball Pool"><div class="title-overlay">8 Ball Pool</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="180" title="Adrenaline Challenge">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/adrenalinechallenge.jpg" alt="Adrenaline Challenge"><div class="title-overlay">Adrenaline Challenge</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="181" title="Adventure Drivers">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(38).png" alt="Adventure Drivers"><div class="title-overlay">Adventure Drivers</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="182" title="Aquapark Slides">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(39).png" alt="Aquapark Slides"><div class="title-overlay">Aquapark Slides</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="183" title="Basket and Ball">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(30).avif" alt="Basket and Ball"><div class="title-overlay">Basket and Ball</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="184" title="Basket Champs">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(31).jpg" alt="Basket Champs"><div class="title-overlay">Basket Champs</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="185" title="Basketball Stars">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/basketball-stars.png" alt="Basketball Stars"><div class="title-overlay">Basketball Stars</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="186" title="Basket Random">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/BasketRandom.png" alt="Basket Random"><div class="title-overlay">Basket Random</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="187" title="Big Shot Boxing">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/favicon(4).png" alt="Big Shot Boxing"><div class="title-overlay">Big Shot Boxing</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="188" title="Biker Street">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(32).jpg" alt="Biker Street"><div class="title-overlay">Biker Street</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="189" title="Boxing Random">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/512x512(2).jpg" alt="Boxing Random"><div class="title-overlay">Boxing Random</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="190" title="Car Rush">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(7).png" alt="Car Rush"><div class="title-overlay">Car Rush</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="191" title="Cars Simulator">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(40).png" alt="Cars Simulator"><div class="title-overlay">Cars Simulator</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="192" title="Cluster Rush">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(41).png" alt="Cluster Rush"><div class="title-overlay">Cluster Rush</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="193" title="Crazy Cars">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(33).jpg" alt="Crazy Cars"><div class="title-overlay">Crazy Cars</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="194" title="Draw the Hill">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-512.png" alt="Draw the Hill"><div class="title-overlay">Draw the Hill</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="195" title="Drift Boss">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/drift-boss.png" alt="Drift Boss"><div class="title-overlay">Drift Boss</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="196" title="Drive Mad">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(34).jpg" alt="Drive Mad"><div class="title-overlay">Drive Mad</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="197" title="Edge Let&#39;s Surf">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(42).png" alt="Edge Let&#39;s Surf"><div class="title-overlay">Edge Let's Surf</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="198" title="Eggy Car">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(35).jpg" alt="Eggy Car"><div class="title-overlay">Eggy Car</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="199" title="Endless Truck">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(36).jpg" alt="Endless Truck"><div class="title-overlay">Endless Truck</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="200" title="Football Brawl">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(37).jpg" alt="Football Brawl"><div class="title-overlay">Football Brawl</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="201" title="Football Legends">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(38).jpg" alt="Football Legends"><div class="title-overlay">Football Legends</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="202" title="Football Strike">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(39).jpg" alt="Football Strike"><div class="title-overlay">Football Strike</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="203" title="Get On Top">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(40).jpg" alt="Get On Top"><div class="title-overlay">Get On Top</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="204" title="Heads Arena">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(41).jpg" alt="Heads Arena"><div class="title-overlay">Heads Arena</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="205" title="Head Soccer 2023">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(42).jpg" alt="Head Soccer 2023"><div class="title-overlay">Head Soccer 2023</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="206" title="Madalin Stunt Cars 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(43).jpg" alt="Madalin Stunt Cars 2"><div class="title-overlay">Madalin Stunt Cars 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="207" title="Moving Truck">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(44).jpg" alt="Moving Truck"><div class="title-overlay">Moving Truck</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="208" title="Penalty Shooters 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-256(2).png" alt="Penalty Shooters 2"><div class="title-overlay">Penalty Shooters 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="209" title="Retro Bowl">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon(6).jpg" alt="Retro Bowl"><div class="title-overlay">Retro Bowl</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="210" title="Scrap Metal 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(43).png" alt="Scrap Metal 3"><div class="title-overlay">Scrap Metal 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="211" title="Soccer Random">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/unnamed(2).png" alt="Soccer Random"><div class="title-overlay">Soccer Random</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="212" title="Soccer Skills Euro Cup">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(44).png" alt="Soccer Skills Euro Cup"><div class="title-overlay">Soccer Skills Euro Cup</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="213" title="The Heist">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/theheist.jpg" alt="The Heist"><div class="title-overlay">The Heist</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="214" title="Volley Random">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(45).png" alt="Volley Random"><div class="title-overlay">Volley Random</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="215" title="X Trial Racing">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(46).png" alt="X Trial Racing"><div class="title-overlay">X Trial Racing</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="216" title="1">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/apple-touch-icon.png" alt="1"><div class="title-overlay">1</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="217" title="1010 Color Match">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(47).png" alt="1010 Color Match"><div class="title-overlay">1010 Color Match</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="218" title="1010 Deluxe">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(45).jpg" alt="1010 Deluxe"><div class="title-overlay">1010 Deluxe</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="219" title="2048">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(8).png" alt="2048"><div class="title-overlay">2048</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="220" title="2048 Multitask">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(48).png" alt="2048 Multitask"><div class="title-overlay">2048 Multitask</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="221" title="3 Pandas in Japan">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(46).jpg" alt="3 Pandas in Japan"><div class="title-overlay">3 Pandas in Japan</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="222" title="900719925474">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo-4.png" alt="900719925474"><div class="title-overlay">900719925474</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="223" title="Achievement Unlocked">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/achievementunlocked.png" alt="Achievement Unlocked"><div class="title-overlay">Achievement Unlocked</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="224" title="Adventure with Anxiety">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(49).png" alt="Adventure with Anxiety"><div class="title-overlay">Adventure with Anxiety</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="225" title="Among Us">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/red.png" alt="Among Us"><div class="title-overlay">Among Us</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="226" title="Bad Ice Cream">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/bad-ice-cream.png" alt="Bad Ice Cream"><div class="title-overlay">Bad Ice Cream</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="227" title="Bad Ice Cream 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/bad-ice-cream-2.png" alt="Bad Ice Cream 2"><div class="title-overlay">Bad Ice Cream 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="228" title="Bad Ice Cream 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/bad-ice-cream-3.png" alt="Bad Ice Cream 3"><div class="title-overlay">Bad Ice Cream 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="229" title="Ball Sort Halloween">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(47).jpg" alt="Ball Sort Halloween"><div class="title-overlay">Ball Sort Halloween</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="230" title="Ball Sort Puzzle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(48).png" alt="Ball Sort Puzzle"><div class="title-overlay">Ball Sort Puzzle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="231" title="Ball Sort Soccer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(49).png" alt="Ball Sort Soccer"><div class="title-overlay">Ball Sort Soccer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="232" title="Ballistic">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(50).jpg" alt="Ballistic"><div class="title-overlay">Ballistic</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="233" title="Battle for Gondor">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/battleforgondor.JPG" alt="Battle for Gondor"><div class="title-overlay">Battle for Gondor</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="234" title="Black Hole Square">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon(7).png" alt="Black Hole Square"><div class="title-overlay">Black Hole Square</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="235" title="Block the Pig">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(51).avif" alt="Block the Pig"><div class="title-overlay">Block the Pig</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="236" title="Bloons TD">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/bloonstd.jpg" alt="Bloons TD"><div class="title-overlay">Bloons TD</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="237" title="Bloons TD 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/bloonstd2.png" alt="Bloons TD 2"><div class="title-overlay">Bloons TD 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="238" title="Bloons TD 4">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(52).jpg" alt="Bloons TD 4"><div class="title-overlay">Bloons TD 4</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="239" title="Bloxors">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/block.png" alt="Bloxors"><div class="title-overlay">Bloxors</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="240" title="Blumgi Rocket">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(9).png" alt="Blumgi Rocket"><div class="title-overlay">Blumgi Rocket</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="241" title="Breaking the Bank">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/breakingthebank.png" alt="Breaking the Bank"><div class="title-overlay">Breaking the Bank</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="242" title="Big Tower Tiny Square">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/images.png" alt="Big Tower Tiny Square"><div class="title-overlay">Big Tower Tiny Square</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="243" title="Bouncy Woods">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(10).png" alt="Bouncy Woods"><div class="title-overlay">Bouncy Woods</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="244" title="Bubble Pop Adventures">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(11).jpg" alt="Bubble Pop Adventures"><div class="title-overlay">Bubble Pop Adventures</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="245" title="Burrito Bison">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(53).png" alt="Burrito Bison"><div class="title-overlay">Burrito Bison</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="246" title="Cannon Basketball 4">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(50).png" alt="Cannon Basketball 4"><div class="title-overlay">Cannon Basketball 4</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="247" title="Canyon Defense">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/canyondefense.png" alt="Canyon Defense"><div class="title-overlay">Canyon Defense</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="248" title="Cell Machine">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/te9nDu.png" alt="Cell Machine"><div class="title-overlay">Cell Machine</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="249" title="Checkers Legend">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(12).jpg" alt="Checkers Legend"><div class="title-overlay">Checkers Legend</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="250" title="circlO">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/download.png" alt="circlO"><div class="title-overlay">circlO</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="251" title="circloO 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumv.png" alt="circloO 2"><div class="title-overlay">circloO 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="252" title="Climb Over It">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(13).jpg" alt="Climb Over It"><div class="title-overlay">Climb Over It</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="253" title="Connect 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/connect3.png" alt="Connect 3"><div class="title-overlay">Connect 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="254" title="Crossy Road">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/crossyroad.png" alt="Crossy Road"><div class="title-overlay">Crossy Road</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="255" title="Cut the Rope">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(54).png" alt="Cut the Rope"><div class="title-overlay">Cut the Rope</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="256" title="Cut the Rope Holiday">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Holiday_Gift.webp" alt="Cut the Rope Holiday"><div class="title-overlay">Cut the Rope Holiday</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="257" title="Cut the Rope Time Travel">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(55).png" alt="Cut the Rope Time Travel"><div class="title-overlay">Cut the Rope Time Travel</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="258" title="Deal or No Deal">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/index.jpg" alt="Deal or No Deal"><div class="title-overlay">Deal or No Deal</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="259" title="Deepest Sword">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(56).jpg" alt="Deepest Sword"><div class="title-overlay">Deepest Sword</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="260" title="Dino Bros">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(57).jpg" alt="Dino Bros"><div class="title-overlay">Dino Bros</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="261" title="Doctor Acorn 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(51).jpg" alt="Doctor Acorn 2"><div class="title-overlay">Doctor Acorn 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="262" title="Doge 2048">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/doge1.jpeg" alt="Doge 2048"><div class="title-overlay">Doge 2048</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="263" title="Edge Not Found">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/edge.png" alt="Edge Not Found"><div class="title-overlay">Edge Not Found</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="264" title="Escaping the Prison">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(58).jpg" alt="Escaping the Prison"><div class="title-overlay">Escaping the Prison</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="265" title="Evolution">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(52).png" alt="Evolution"><div class="title-overlay">Evolution</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="266" title="Exo">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/small.jpg" alt="Exo"><div class="title-overlay">Exo</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="267" title="Factory Balls Forever">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(53).png" alt="Factory Balls Forever"><div class="title-overlay">Factory Balls Forever</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="268" title="Farm Match Seasons">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Icon_512x512.png" alt="Farm Match Seasons"><div class="title-overlay">Farm Match Seasons</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="269" title="Flash Tetris">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/flashtetris.png" alt="Flash Tetris"><div class="title-overlay">Flash Tetris</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="270" title="Fleeing the Complex">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(59).jpg" alt="Fleeing the Complex"><div class="title-overlay">Fleeing the Complex</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="271" title="Game Inside a Game Inside a Game...">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/display.png" alt="Game Inside a Game Inside a Game..."><div class="title-overlay">Game Inside a Game Inside a Game...</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="272" title="George and the Printer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/SnDTEn.png" alt="George and the Printer"><div class="title-overlay">George and the Printer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="273" title="Getting Over It">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/GettingOverIt.png" alt="Getting Over It"><div class="title-overlay">Getting Over It</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="274" title="Go Ball">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/game.jpg" alt="Go Ball"><div class="title-overlay">Go Ball</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="275" title="Google Feud">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(54).png" alt="Google Feud"><div class="title-overlay">Google Feud</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="276" title="Gravity Soccer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(55).png" alt="Gravity Soccer"><div class="title-overlay">Gravity Soccer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="277" title="Grey Box Testing">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/ico.png" alt="Grey Box Testing"><div class="title-overlay">Grey Box Testing</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="278" title="Handshakes">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splaher.png" alt="Handshakes"><div class="title-overlay">Handshakes</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="279" title="Hanger">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(60).jpg" alt="Hanger"><div class="title-overlay">Hanger</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="280" title="Hex Empire">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/hexempire.jpg" alt="Hex Empire"><div class="title-overlay">Hex Empire</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="281" title="Hextris">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/hextris-logo.png" alt="Hextris"><div class="title-overlay">Hextris</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="282" title="Icy Purple Head 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(61).jpg" alt="Icy Purple Head 2"><div class="title-overlay">Icy Purple Head 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="283" title="Icy Purple Head 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(62).jpg" alt="Icy Purple Head 3"><div class="title-overlay">Icy Purple Head 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="284" title="Impossible Quiz">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/impossiblequiz.png" alt="Impossible Quiz"><div class="title-overlay">Impossible Quiz</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="285" title="Infiltrating the Airship">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(63).jpg" alt="Infiltrating the Airship"><div class="title-overlay">Infiltrating the Airship</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="286" title="Jewels Blitz 5">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Icon_512x512(1).png" alt="Jewels Blitz 5"><div class="title-overlay">Jewels Blitz 5</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="287" title="Marbles Sorting">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(64).jpg" alt="Marbles Sorting"><div class="title-overlay">Marbles Sorting</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="288" title="Meme 2048">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/rickroll.gif" alt="Meme 2048"><div class="title-overlay">Meme 2048</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="289" title="Minesweeper">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/minesweeper.png" alt="Minesweeper"><div class="title-overlay">Minesweeper</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="290" title="Mini-putt">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/miniputt.png" alt="Mini-putt"><div class="title-overlay">Mini-putt</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="291" title="Money Movers">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(65).jpg" alt="Money Movers"><div class="title-overlay">Money Movers</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="292" title="Money Movers 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(66).jpg" alt="Money Movers 2"><div class="title-overlay">Money Movers 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="293" title="Money Movers 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(67).jpg" alt="Money Movers 3"><div class="title-overlay">Money Movers 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="294" title="Park Out">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(68).jpg" alt="Park Out"><div class="title-overlay">Park Out</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="295" title="Plants vs Zombies">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/PlantsVsZombies.png" alt="Plants vs Zombies"><div class="title-overlay">Plants vs Zombies</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="296" title="Portal (Flash)">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/portaltheflashversion.jpg" alt="Portal (Flash)"><div class="title-overlay">Portal (Flash)</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="297" title="Push Your Luck">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/push.png" alt="Push Your Luck"><div class="title-overlay">Push Your Luck</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="298" title="Rabbit Samurai">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(56).png" alt="Rabbit Samurai"><div class="title-overlay">Rabbit Samurai</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="299" title="Rabbit Samurai 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(57).png" alt="Rabbit Samurai 2"><div class="title-overlay">Rabbit Samurai 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="300" title="Riddle School 1">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/riddleschool.png" alt="Riddle School 1"><div class="title-overlay">Riddle School 1</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="301" title="Riddle School 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/riddleschool2.png" alt="Riddle School 2"><div class="title-overlay">Riddle School 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="302" title="Riddle School 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/riddleschool3.png" alt="Riddle School 3"><div class="title-overlay">Riddle School 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="303" title="Riddle School 4">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/riddleschool4.png" alt="Riddle School 4"><div class="title-overlay">Riddle School 4</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="304" title="Riddle School 5">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/riddleschool5.png" alt="Riddle School 5"><div class="title-overlay">Riddle School 5</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="305" title="Riddle School Transfer 1">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/riddletransfer.png" alt="Riddle School Transfer 1"><div class="title-overlay">Riddle School Transfer 1</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="306" title="Riddle School Transfer 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/riddletransfer2.png" alt="Riddle School Transfer 2"><div class="title-overlay">Riddle School Transfer 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="307" title="Roper">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/cover(1).jpg" alt="Roper"><div class="title-overlay">Roper</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="308" title="Slime Rush TD">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(58).png" alt="Slime Rush TD"><div class="title-overlay">Slime Rush TD</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="309" title="Stealing The Diamond">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/stealingthediamond.jpg" alt="Stealing The Diamond"><div class="title-overlay">Stealing The Diamond</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="310" title="Stickman Golf">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(59).png" alt="Stickman Golf"><div class="title-overlay">Stickman Golf</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="311" title="Stickman Hook">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/unnamed.jpg" alt="Stickman Hook"><div class="title-overlay">Stickman Hook</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="312" title="Storm The House 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/stormthehouse2.jpg" alt="Storm The House 2"><div class="title-overlay">Storm The House 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="313" title="Territorial">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/Territorial.png" alt="Territorial"><div class="title-overlay">Territorial</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="314" title="The Battle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thebattle.png" alt="The Battle"><div class="title-overlay">The Battle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="315" title="The Final Earth">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/images(1).png" alt="The Final Earth"><div class="title-overlay">The Final Earth</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="316" title="There Is No Game">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(69).png" alt="There Is No Game"><div class="title-overlay">There Is No Game</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="317" title="Tiny Islands">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(60).png" alt="Tiny Islands"><div class="title-overlay">Tiny Islands</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="318" title="Twitch Tetris">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(70).png" alt="Twitch Tetris"><div class="title-overlay">Twitch Tetris</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="319" title="Waterworks!">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/square.png" alt="Waterworks!"><div class="title-overlay">Waterworks!</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="320" title="Wall Smash">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(14).png" alt="Wall Smash"><div class="title-overlay">Wall Smash</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="321" title="Wordle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo_192x192.png" alt="Wordle"><div class="title-overlay">Wordle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="322" title="xx142-b2exe">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(61).png" alt="xx142-b2exe"><div class="title-overlay">xx142-b2exe</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="323" title="You Are Jeff Bezos">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/banner.png" alt="You Are Jeff Bezos"><div class="title-overlay">You Are Jeff Bezos</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="324" title="BitLife">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(62).png" alt="BitLife"><div class="title-overlay">BitLife</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="325" title="Happy Hop">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(63).png" alt="Happy Hop"><div class="title-overlay">Happy Hop</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="326" title="Hover Bot Arena">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/hoverbotarena.JPG" alt="Hover Bot Arena"><div class="title-overlay">Hover Bot Arena</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="327" title="Just One Boss">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/pv1Gr5.png" alt="Just One Boss"><div class="title-overlay">Just One Boss</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="328" title="My Rusty Submarine">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(64).png" alt="My Rusty Submarine"><div class="title-overlay">My Rusty Submarine</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="329" title="OvO">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/ovo.png" alt="OvO"><div class="title-overlay">OvO</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="330" title="Pandemic 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/pandemic2.png" alt="Pandemic 2"><div class="title-overlay">Pandemic 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="331" title="Papa&#39;s Burgeria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(65).jpg" alt="Papa&#39;s Burgeria"><div class="title-overlay">Papa's Burgeria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="332" title="Papa&#39;s Pizzaria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/papaspizzaria.jpg" alt="Papa&#39;s Pizzaria"><div class="title-overlay">Papa's Pizzaria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="333" title="Paper.io 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon512.png" alt="Paper.io 2"><div class="title-overlay">Paper.io 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="334" title="Sandboxels">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/sandboxels.jpg" alt="Sandboxels"><div class="title-overlay">Sandboxels</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="335" title="Santy is Home">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(66).png" alt="Santy is Home"><div class="title-overlay">Santy is Home</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="336" title="Sky Car Stunt">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/512x512(3).jpg" alt="Sky Car Stunt"><div class="title-overlay">Sky Car Stunt</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="337" title="Snowbattle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(71).png" alt="Snowbattle"><div class="title-overlay">Snowbattle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="338" title="Solitaire">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(72).jpg" alt="Solitaire"><div class="title-overlay">Solitaire</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="339" title="The Hotel">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/splash(67).png" alt="The Hotel"><div class="title-overlay">The Hotel</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="340" title="Toss the Turtle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/tosstheturtle.png" alt="Toss the Turtle"><div class="title-overlay">Toss the Turtle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="341" title="Yoshi&#39;s Fabrication Lab">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-512(1).png" alt="Yoshi&#39;s Fabrication Lab"><div class="title-overlay">Yoshi's Fabrication Lab</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="342" title="Paper.io 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/PaperIo3.png" alt="Paper.io 3"><div class="title-overlay">Paper.io 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="343" title="Mr Bullet">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(73).jpg" alt="Mr Bullet"><div class="title-overlay">Mr Bullet</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="344" title="Mutazone">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(74).jpg" alt="Mutazone"><div class="title-overlay">Mutazone</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="345" title="Ninja Cat">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(75).jpg" alt="Ninja Cat"><div class="title-overlay">Ninja Cat</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="346" title="OvO 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(76).jpg" alt="OvO 2"><div class="title-overlay">OvO 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="347" title="OvO Dimensions">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(77).jpg" alt="OvO Dimensions"><div class="title-overlay">OvO Dimensions</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="348" title="Pacman">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(78).png" alt="Pacman"><div class="title-overlay">Pacman</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="349" title="Papa Cherry Saga">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(79).jpg" alt="Papa Cherry Saga"><div class="title-overlay">Papa Cherry Saga</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="350" title="Parking Fury">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(80).jpg" alt="Parking Fury"><div class="title-overlay">Parking Fury</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="351" title="Parking Fury 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(81).jpg" alt="Parking Fury 2"><div class="title-overlay">Parking Fury 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="352" title="Parking Fury 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/67f5943d779b41b2bc6a67ce132b7c68-512x512.jpeg" alt="Parking Fury 3"><div class="title-overlay">Parking Fury 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="353" title="Penalty Kick Online">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(82).jpg" alt="Penalty Kick Online"><div class="title-overlay">Penalty Kick Online</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="354" title="Penalty Shooters 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(83).jpg" alt="Penalty Shooters 3"><div class="title-overlay">Penalty Shooters 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="355" title="Pixel Smash Duel">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(84).jpg" alt="Pixel Smash Duel"><div class="title-overlay">Pixel Smash Duel</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="356" title="Pizza Tower">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(85).jpg" alt="Pizza Tower"><div class="title-overlay">Pizza Tower</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="357" title="Pou">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(86).png" alt="Pou"><div class="title-overlay">Pou</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="358" title="Pudding Monsters">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(87).jpg" alt="Pudding Monsters"><div class="title-overlay">Pudding Monsters</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="359" title="Racing Monster Trucks">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(88).jpg" alt="Racing Monster Trucks"><div class="title-overlay">Racing Monster Trucks</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="360" title="Run 3 Space">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(89).jpg" alt="Run 3 Space"><div class="title-overlay">Run 3 Space</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="361" title="Rusher Crusher">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(90).jpg" alt="Rusher Crusher"><div class="title-overlay">Rusher Crusher</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="362" title="Save the Doge">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(91).jpg" alt="Save the Doge"><div class="title-overlay">Save the Doge</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="363" title="Sling Tomb">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(92).jpg" alt="Sling Tomb"><div class="title-overlay">Sling Tomb</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="364" title="Snail Bob 7">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/9aefc9ef4a7f4d5d8062cfb563cc658c-512x512.jpeg" alt="Snail Bob 7"><div class="title-overlay">Snail Bob 7</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="365" title="Snail Bob 8">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(93).jpg" alt="Snail Bob 8"><div class="title-overlay">Snail Bob 8</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="366" title="Soccer Heads">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(94).jpg" alt="Soccer Heads"><div class="title-overlay">Soccer Heads</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="367" title="Space Bar Clicker">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(95).jpg" alt="Space Bar Clicker"><div class="title-overlay">Space Bar Clicker</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="368" title="Spider Solitaire">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(96).jpg" alt="Spider Solitaire"><div class="title-overlay">Spider Solitaire</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="369" title="Super Liquid Soccer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(97).jpg" alt="Super Liquid Soccer"><div class="title-overlay">Super Liquid Soccer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="370" title="Super Mario Wonder">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/loading-logo.png" alt="Super Mario Wonder"><div class="title-overlay">Super Mario Wonder</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="371" title="Swingo">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(98).jpg" alt="Swingo"><div class="title-overlay">Swingo</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="372" title="Tap Tap Shots">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(99).jpg" alt="Tap Tap Shots"><div class="title-overlay">Tap Tap Shots</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="373" title="Tower Crash 3D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(100).jpg" alt="Tower Crash 3D"><div class="title-overlay">Tower Crash 3D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="374" title="Traffic Control">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(101).jpg" alt="Traffic Control"><div class="title-overlay">Traffic Control</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="375" title="Tunnel Rush 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(102).jpg" alt="Tunnel Rush 2"><div class="title-overlay">Tunnel Rush 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="376" title="Turn Turn">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(103).jpg" alt="Turn Turn"><div class="title-overlay">Turn Turn</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="377" title="Wheelie Bike">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-256(3).png" alt="Wheelie Bike"><div class="title-overlay">Wheelie Bike</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="378" title="Wheelie Bike 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/icon-256(4).png" alt="Wheelie Bike 2"><div class="title-overlay">Wheelie Bike 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="379" title="Wheely 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(104).jpg" alt="Wheely 2"><div class="title-overlay">Wheely 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="380" title="Wheely 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(105).jpg" alt="Wheely 3"><div class="title-overlay">Wheely 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="381" title="Wheely 4">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(106).jpg" alt="Wheely 4"><div class="title-overlay">Wheely 4</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="382" title="Wheely 5">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(107).jpg" alt="Wheely 5"><div class="title-overlay">Wheely 5</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="383" title="Wheely 6">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(108).jpg" alt="Wheely 6"><div class="title-overlay">Wheely 6</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="384" title="Wheely 7">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(109).jpg" alt="Wheely 7"><div class="title-overlay">Wheely 7</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="385" title="Wheely 8">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(110).jpg" alt="Wheely 8"><div class="title-overlay">Wheely 8</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="386" title="Wood Block Puzzle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(111).jpg" alt="Wood Block Puzzle"><div class="title-overlay">Wood Block Puzzle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="387" title="Woodventure">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(112).jpg" alt="Woodventure"><div class="title-overlay">Woodventure</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="388" title="Wordle Unlimited">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(113).png" alt="Wordle Unlimited"><div class="title-overlay">Wordle Unlimited</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="389" title="Word Slide">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(114).jpg" alt="Word Slide"><div class="title-overlay">Word Slide</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="390" title="Retro Bowl College">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/unnamed(3).png" alt="Retro Bowl College"><div class="title-overlay">Retro Bowl College</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="391" title="Axis Football League">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(115).jpg" alt="Axis Football League"><div class="title-overlay">Axis Football League</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="392" title="Burrito Bison Revenge">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(116).jpg" alt="Burrito Bison Revenge"><div class="title-overlay">Burrito Bison Revenge</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="393" title="Fancy Pants Adventures 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(117).avif" alt="Fancy Pants Adventures 2"><div class="title-overlay">Fancy Pants Adventures 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="394" title="Fancy Pants Adventures 3">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(118).avif" alt="Fancy Pants Adventures 3"><div class="title-overlay">Fancy Pants Adventures 3</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="395" title="Galaga">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(119).png" alt="Galaga"><div class="title-overlay">Galaga</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="396" title="Dummy Never Fails">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(120).jpg" alt="Dummy Never Fails"><div class="title-overlay">Dummy Never Fails</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="397" title="Dummy Never Fails 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(121).jpg" alt="Dummy Never Fails 2"><div class="title-overlay">Dummy Never Fails 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="398" title="Gunblood">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(122).png" alt="Gunblood"><div class="title-overlay">Gunblood</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="399" title="Learn To Fly 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(123).jpeg" alt="Learn To Fly 2"><div class="title-overlay">Learn To Fly 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="400" title="Papa&#39;s Bakeria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(124).jpg" alt="Papa&#39;s Bakeria"><div class="title-overlay">Papa's Bakeria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="401" title="Papa&#39;s Cheeseria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(125).jpg" alt="Papa&#39;s Cheeseria"><div class="title-overlay">Papa's Cheeseria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="402" title="Papa&#39;s Cupcakeria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(126).jpg" alt="Papa&#39;s Cupcakeria"><div class="title-overlay">Papa's Cupcakeria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="403" title="Papa&#39;s Donuteria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(127).png" alt="Papa&#39;s Donuteria"><div class="title-overlay">Papa's Donuteria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="404" title="Papa&#39;s Freezeria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(128).jpg" alt="Papa&#39;s Freezeria"><div class="title-overlay">Papa's Freezeria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="405" title="Papa&#39;s Hot Doggeria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(129).jpg" alt="Papa&#39;s Hot Doggeria"><div class="title-overlay">Papa's Hot Doggeria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="406" title="Papa&#39;s Pancakeria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(130).jpg" alt="Papa&#39;s Pancakeria"><div class="title-overlay">Papa's Pancakeria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="407" title="Papa&#39;s Pastaria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(131).jpg" alt="Papa&#39;s Pastaria"><div class="title-overlay">Papa's Pastaria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="408" title="Papa&#39;s Scooperia">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(132).jpg" alt="Papa&#39;s Scooperia"><div class="title-overlay">Papa's Scooperia</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="409" title="Papa&#39;s Sushiria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(133).jpg" alt="Papa&#39;s Sushiria"><div class="title-overlay">Papa's Sushiria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="410" title="Papa&#39;s Taco Mia">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(134).jpg" alt="Papa&#39;s Taco Mia"><div class="title-overlay">Papa's Taco Mia</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="411" title="Papa&#39;s Wingeria">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(135).jpg" alt="Papa&#39;s Wingeria"><div class="title-overlay">Papa's Wingeria</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="412" title="Gun Mayhem">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(136).jpg" alt="Gun Mayhem"><div class="title-overlay">Gun Mayhem</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="413" title="Gun Mayhem 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo.webp" alt="Gun Mayhem 2"><div class="title-overlay">Gun Mayhem 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="414" title="Gun Mayhem Redux">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(137).jpg" alt="Gun Mayhem Redux"><div class="title-overlay">Gun Mayhem Redux</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="415" title="Icycle">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(138).avif" alt="Icycle"><div class="title-overlay">Icycle</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="416" title="Monster Truck Destroyer">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/unnamed(4).png" alt="Monster Truck Destroyer"><div class="title-overlay">Monster Truck Destroyer</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="417" title="Pokemon Emerald">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(139).jpg" alt="Pokemon Emerald"><div class="title-overlay">Pokemon Emerald</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="418" title="Pokemon Emerald 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(140).jpg" alt="Pokemon Emerald 2"><div class="title-overlay">Pokemon Emerald 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="419" title="Pokemon Firered">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(141).jpg" alt="Pokemon Firered"><div class="title-overlay">Pokemon Firered</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="420" title="Bally">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(15).png" alt="Bally"><div class="title-overlay">Bally</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="421" title="Bicycle Stunt 3D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumbnail(1).jpg" alt="Bicycle Stunt 3D"><div class="title-overlay">Bicycle Stunt 3D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="422" title="Bob the Robber 4">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(16).png" alt="Bob the Robber 4"><div class="title-overlay">Bob the Robber 4</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="423" title="Bottle Flip 3D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(17).png" alt="Bottle Flip 3D"><div class="title-overlay">Bottle Flip 3D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="424" title="Bullet Force">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(18).jpg" alt="Bullet Force"><div class="title-overlay">Bullet Force</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="425" title="Burnin&#39; Rubber 5 XS">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(19).jpg" alt="Burnin&#39; Rubber 5 XS"><div class="title-overlay">Burnin' Rubber 5 XS</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="426" title="Cartoon Mini Racing">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(20).jpg" alt="Cartoon Mini Racing"><div class="title-overlay">Cartoon Mini Racing</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="427" title="Run 2">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(21).png" alt="Run 2"><div class="title-overlay">Run 2</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="428" title="Skywire">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb.avif" alt="Skywire"><div class="title-overlay">Skywire</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="429" title="Whack your Boss">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb(22).jpg" alt="Whack your Boss"><div class="title-overlay">Whack your Boss</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="430" title="Crazy Tunnel 3D">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/thumb.webp" alt="Crazy Tunnel 3D"><div class="title-overlay">Crazy Tunnel 3D</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="431" title="Eagle Ride">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(142).avif" alt="Eagle Ride"><div class="title-overlay">Eagle Ride</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="432" title="Earn to Die">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(143).png" alt="Earn to Die"><div class="title-overlay">Earn to Die</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="433" title="Electron Dash">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(144).png" alt="Electron Dash"><div class="title-overlay">Electron Dash</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="434" title="Endless Tunnel">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(145).png" alt="Endless Tunnel"><div class="title-overlay">Endless Tunnel</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="435" title="Fisherman Life">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(146).webp" alt="Fisherman Life"><div class="title-overlay">Fisherman Life</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="436" title="Football Run">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(147).jpg" alt="Football Run"><div class="title-overlay">Football Run</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="437" title="Gladihoppers">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(148).jpg" alt="Gladihoppers"><div class="title-overlay">Gladihoppers</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="438" title="Glitch Dash">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(149).avif" alt="Glitch Dash"><div class="title-overlay">Glitch Dash</div></div>
+    <div class="meta"></div>
+  </a><a class="card" href="https://student-lessons-30.live/#" data-idx="439" title="Ohio Fortnite">
+    <div class="thumb"><img loading="lazy" src="./student-lessons-30.live_files/logo(150).jpg" alt="Ohio Fortnite"><div class="title-overlay">Ohio Fortnite</div></div>
+    <div class="meta"></div>
+  </a></div>
+
+    <footer>
+      <a href="https://student-lessons-30.live/about.html">About</a>
+      <a href="https://student-lessons-30.live/privacy.html">Privacy Policy</a>
+      <a href="https://student-lessons-30.live/terms.html">Terms of Service</a>
+      <a href="https://student-lessons-30.live/contact.html">Contact</a>
+    </footer>
+  </div>
+
+  <div class="modal" id="playerModal" aria-modal="true" role="dialog" aria-label="Game player">
+    <div class="sheet">
+      <div class="pbar">
+        <div class="title" id="gameTitle"></div>
+        <div class="right">
+          <button class="pbtn" id="btnFullscreen">Fullscreen</button>
+          <button class="pbtn" id="btnBack">Close</button>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="preplay" id="preplay">
+          <div class="thumb"><img id="ppThumb" alt=""></div>
+          <div class="ad-300" id="ppAd" style="display: none !important;">
+            <div id="agario-cafe_300x250" style="width:300px;height:250px;">
+              <script>
+                aiptag = window.aiptag || {cmd:{}};
+                aiptag.cmd.display = aiptag.cmd.display || [];
+                aiptag.cmd.display.push(function(){ aipDisplayTag.display('agario-cafe_300x250'); });
+              </script>
+            </div>
+          </div>
+          <div class="row"><button class="play-btn" id="ppPlay">▶ PLAY</button></div>
+          <div class="hint">Press <b>ESC</b> to close</div>
+        </div>
+        <iframe id="player" title="Game" allow="fullscreen" allowfullscreen="" src="./student-lessons-30.live_files/saved_resource.html"></iframe>
+      </div>
+    </div>
+  </div>
+
+<script src="./student-lessons-30.live_files/ads.js.download"></script>
+<script>
+const LSKEY = 'g30_favicon_switcher_v5_3';
+const FAV = {
+  default: { ico: '/favicon.ico', apple: '/apple-touch-icon.png' },
+  classroom: { ico: 'https://student-lessons-30.live/favicon.ico', apple: 'student-lessons-30.live.org/favicon.ico' },
+  google: { ico: 'https://www.google.com/favicon.ico', apple: 'https://www.google.com/favicon.ico' },
+  drive: { ico: 'https://drive.google.com/favicon.ico', apple: 'https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png' },
+  canvas: { ico: 'https://canvas.instructure.com/favicon.ico', apple: 'https://canvas.instructure.com/favicon.ico' },
+  powerschool: { ico: 'https://www.powerschool.com/favicon.ico', apple: 'https://www.powerschool.com/favicon.ico' }
+};
+
+const grid = document.getElementById('grid');
+const q = document.getElementById('q');
+const catSelect = document.getElementById('catSelect');
+const counter = document.getElementById('counter');
+
+const btnSettings = document.getElementById('btnSettings');
+const settingsPanel = document.getElementById('settingsPanel');
+const iconGrid = document.getElementById('iconGrid');
+const favIco = document.getElementById('fav-ico');
+const favApple = document.getElementById('fav-apple');
+
+/* SAFE DOM refs for player */
+const modal   = document.getElementById('playerModal');
+const player  = document.getElementById('player');
+const preplay = document.getElementById('preplay');
+const gameTitleEl = document.getElementById('gameTitle');
+const ppThumbEl   = document.getElementById('ppThumb');
+const ppPlay = document.getElementById('ppPlay');
+
+function loadS(){ try{ return JSON.parse(localStorage.getItem(LSKEY))||{} }catch{ return {} } }
+function saveS(s){ localStorage.setItem(LSKEY, JSON.stringify(s)); }
+
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme || 'dark');
+  document.querySelectorAll('input[name="theme"]').forEach(r => r.checked = (r.value === (theme||'dark')));
+}
+function setFavicon(app){
+  const map = FAV[app] || FAV.default;
+  favIco.href = map.ico; favApple.href = map.apple || map.ico;
+  document.querySelectorAll('.tile').forEach(t => t.classList.toggle('active', t.dataset.app === app));
+}
+iconGrid?.addEventListener('click', (e)=>{
+  const tile = e.target.closest('.tile'); if(!tile) return;
+  const app = tile.dataset.app;
+  const s = loadS(); s.app = app; saveS(s); setFavicon(app);
+});
+btnSettings?.addEventListener('click', ()=>{
+  const open = !settingsPanel.classList.contains('open');
+  settingsPanel.classList.toggle('open', open);
+  btnSettings.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+document.querySelectorAll('input[name="theme"]').forEach(r => {
+  r.addEventListener('change', ()=>{ const s=loadS(); s.theme=r.value; saveS(s); applyTheme(s.theme); });
+});
+
+const FALLBACK = [];
+async function loadGames(){
+  try{ const res = await fetch('games.json', {cache:'no-store'});
+       if(!res.ok) throw new Error('HTTP '+res.status);
+       const arr = await res.json();
+       return Array.isArray(arr) ? arr : FALLBACK;
+  }catch(e){ console.warn('games.json load failed', e); return FALLBACK; }
+}
+
+let ALL=[], SHOWN=[];
+function cardHTML(g,i){
+  const img = g.game_image_icon ? `<img loading="lazy" src="${g.game_image_icon}" alt="${(g.label||'Game').replace(/"/g,'&quot;')}">` : '';
+  const name = (g.label||'Game').replace(/</g,'&lt;');
+  return `<a class="card" href="#" data-idx="${i}" title="${name}">
+    <div class="thumb">${img}<div class="title-overlay">${name}</div></div>
+    <div class="meta"></div>
+  </a>`;
+}
+function renderGrid(list){ grid.innerHTML = list.map((g,i)=>cardHTML(g,i)).join(''); counter.textContent = list.length + ' games'; }
+function populateCats(){ const set=new Set(); ALL.forEach(g => (g.categories||[]).forEach(c=>set.add(c)));
+  catSelect.innerHTML = ['<option value="">All categories</option>', ...[...set].sort().map(c=>`<option value="${c}">${c}</option>`)].join(''); }
+function applyFilters(){ const term=q.value.trim().toLowerCase(), cat=catSelect.value;
+  SHOWN = ALL.filter(g => (!cat || (g.categories||[]).includes(cat)) && (!term || (g.label||'').toLowerCase().includes(term)));
+  renderGrid(SHOWN);
+}
+
+/* Null-safe start: HTTPS upgrade + load guard */
+function startGame(g){
+  if (preplay) preplay.style.display = 'none';
+  let url = (g && g.game_url) ? g.game_url : 'about:blank';
+  if (location.protocol === 'https:' && /^http:\/\//i.test(url)) {
+    url = url.replace(/^http:\/\//i, 'https://');
+  }
+  try {
+    if (player) {
+      player.removeAttribute('src'); // reset
+      player.src = url;
+      let done = false;
+      const markDone = () => { if (!done) { done = true; if (preplay) preplay.style.display = 'none'; } };
+      player.onload = markDone;
+      player.onerror = function(){ console.warn('iframe load error (X-Frame-Options or mixed content)'); };
+      setTimeout(markDone, 8000);
+    }
+  } catch (e) {
+    console.warn('startGame error', e);
+  }
+}
+
+/* Reklam + 12sn fallback ile oyunu başlat */
+async function runPrerollThenStart(g){
+  let started = false;
+  const start = ()=>{ if(!started){ started = true; startGame(g); } };
+  try{
+    if (typeof window.show_preroll === 'function'){
+      const maybe = window.show_preroll();
+      if (maybe && typeof maybe.then === 'function'){
+        const timer = new Promise(res=>setTimeout(res, 12000));
+        await Promise.race([maybe, timer]);
+      }
+    }
+  }catch(err){ console.warn('show_preroll failed:', err); }
+  start();
+}
+
+/* Card click */
+document.addEventListener('click', (e)=>{
+  const a = e.target.closest('a.card'); if(!a) return;
+  e.preventDefault();
+  const idx = Number(a.dataset.idx);
+  const g = Array.isArray(SHOWN) && SHOWN[idx] ? SHOWN[idx] : null;
+  if (!g) return;
+  const name = g.label || 'Game';
+  if (gameTitleEl) gameTitleEl.textContent = name;
+  if (ppThumbEl)   ppThumbEl.src = g.game_image_icon || '';
+  if (preplay)     preplay.style.display = 'flex';
+  if (player)      player.src = 'about:blank';
+  if (modal)       modal.classList.add('open');
+  if (ppPlay)      ppPlay.onclick = ()=> runPrerollThenStart(g);
+});
+
+/* Buttons on the RIGHT */
+document.getElementById('btnFullscreen').addEventListener('click', async ()=>{
+  const container = player?.parentElement;
+  if (document.fullscreenElement) await document.exitFullscreen().catch(()=>{});
+  else await container?.requestFullscreen?.().catch(()=>{});
+});
+function closePlayer(){
+  if (modal)  modal.classList.remove('open');
+  if (player) player.src='about:blank';
+  if (preplay) preplay.style.display='none';
+  try{ if (typeof window.reloadAds === 'function') window.reloadAds(); }catch(e){ console.warn('reloadAds error', e); }
+}
+document.getElementById('btnBack').addEventListener('click', closePlayer);
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal && modal.classList.contains('open')) closePlayer(); });
+modal.addEventListener('click', (e)=>{ if(e.target === modal) closePlayer(); });
+
+setInterval(()=>{
+  if (modal && modal.classList.contains('open') && (!player?.src || player.src==='about:blank') && preplay && preplay.style.display==='none'){
+    preplay.style.display='flex';
+  }
+}, 800);
+
+(async function(){
+  const s = loadS();
+  applyTheme(s.theme || 'dark');
+  setFavicon(s.app || 'default');
+
+  ALL = await loadGames(); SHOWN = ALL.slice(0);
+  populateCats(); renderGrid(SHOWN);
+
+  ['change','input'].forEach(ev => q.addEventListener(ev, applyFilters));
+  catSelect.addEventListener('change', applyFilters);
+})();
+</script>
+
+<!-- AdinPlay player & preroll integration -->
+<div id="preroll"></div>
+<script>
+  function getScript(src) {
+    var headElm = document.head || document.getElementsByTagName('head')[0];
+    var script = document.createElement("script");
+    var once = true;
+    script.async = "async";
+    script.type = "text/javascript";
+    script.charset = "UTF-8";
+    script.src = src;
+    script.onload = script.onreadystatechange = function() {
+      if (once && (!script.readyState || /loaded|complete/.test(script.readyState))) {
+        once = false; script.onload = script.onreadystatechange = null;
+        console.log("AdinPlay script loaded ✅");
+      }
+    };
+    headElm.appendChild(script);
+  }
+  getScript("https://api.adinplay.com/libs/aiptag/pub/MNS/agario.cafe/tag.min.js");
+
+  window.aiptag = window.aiptag || {cmd: []};
+  aiptag.cmd.display = aiptag.cmd.display || [];
+  aiptag.cmd.player  = aiptag.cmd.player  || [];
+
+  aiptag.cmp = { show:true, position:"centered", button:true, buttonText:"Privacy settings", buttonPosition:"bottom-left" };
+
+  aiptag.cmd.player.push(function() {
+    aiptag.adplayer = new aipPlayer({
+      AD_WIDTH: 960,
+      AD_HEIGHT: 540,
+      AD_DISPLAY: 'center',
+      LOADING_TEXT: 'loading advertisement',
+      PREROLL_ELEM: function(){return document.getElementById('preroll')},
+      AIP_COMPLETE: function(){ /* preroll finished */ },
+      AIP_REMOVE:   function(){ /* preroll removed */ }
+    });
+  });
+
+  function show_preroll() {
+    if (typeof aiptag.adplayer !== 'undefined') {
+      aiptag.cmd.player.push(function() { aiptag.adplayer.startPreRoll(); });
+    } else {
+      console.log("adplayer not ready");
+    }
+  }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="./student-lessons-30.live_files/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LCQCVW3S0J');
+</script>
+<script defer="" src="./student-lessons-30.live_files/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4c6e51b76ce2465a9445b8472a6da7eb&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+</body></html>
